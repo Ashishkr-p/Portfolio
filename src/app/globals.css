@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 210 40% 98%;
+  --text: 222 47% 11%;
+  --muted: 215 20% 42%;
+  --primary: 199 89% 48%;
+  --border: 214 31% 91%;
+}
+
+.dark {
+  --surface: 222 47% 7%;
+  --text: 210 40% 98%;
+  --muted: 215 20% 65%;
+  --primary: 188 95% 43%;
+  --border: 215 27% 17%;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-surface text-text antialiased;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(14, 165, 233, 0.12), transparent 36%),
+    radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.12), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.1), transparent 38%);
+}
+
+::selection {
+  @apply bg-primary/30;
+}
+
+@layer components {
+  .container-base {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-border/80 bg-white/60 p-6 shadow-sm backdrop-blur-md transition-all duration-300 dark:bg-slate-900/50;
+  }
+}
